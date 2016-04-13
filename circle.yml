@@ -11,11 +11,10 @@ machine:
         ANDROID_HOME: /usr/local/android-sdk-linux
 
 dependencies:
-    override:
+    pre:
 
-            - echo y | android update sdk --no-ui --all --filter tools
-            - echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
-            - chmod +x gradlew
+            - echo y | android update sdk --no-ui --all --filter "tools"
+            - echo y | android update sdk --no-ui --all --filter "build-tools-23.0.3"
 
 
 test:
